@@ -8,7 +8,7 @@ st.set_page_config(page_title="Hindsight Economics Hub", layout="wide")
 
 # Sidebar Navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Select an Episode", ["The Roadmap", "Ep 1: Scarcity & PPF"])
+page = st.sidebar.radio("Select an Episode", ["The Roadmap", "Ep 1: Scarcity & PPC"])
 
 # -----------------------------------------
 # PAGE 1: The Roadmap
@@ -20,7 +20,7 @@ if page == "The Roadmap":
     data = {
         "Episode": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         "Syllabus Topic": [
-            "Scarcity & PPF", "Supply, Demand & Eq.", "Price Elasticity", 
+            "Scarcity & PPC", "Supply, Demand & Eq.", "Price Elasticity", 
             "Negative Externalities", "Gov. Failure", "Monopoly Power", 
             "Labour Markets", "Inflation", "Monetary Policy", "Fiscal Policy"
         ],
