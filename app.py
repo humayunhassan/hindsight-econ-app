@@ -35,13 +35,13 @@ if page == "The Roadmap":
     st.table(df.set_index("Episode"))
 
 # -----------------------------------------
-# PAGE 2: Episode 1 (PPF)
+# PAGE 2: Episode 1 (PPC)
 # -----------------------------------------
-elif page == "Ep 1: Scarcity & PPF":
+elif page == "Ep 1: Scarcity & PPC":
     st.title("Episode 1: The 2020 Ventilator Shortage")
     st.markdown("**Topic:** Scarcity, Opportunity Cost, and the Production Possibility Frontier (PPF).")
     
-    st.subheader("PPF Simulator: Medical PPE vs. Consumer Goods")
+    st.subheader("PPC Simulator: Medical PPE vs. Consumer Goods")
     st.markdown("Adjust the slider to allocate resources. Notice how producing more PPE reduces consumer goods.")
     
     ppe_allocation = st.slider("Resources allocated to Medical PPE (%)", min_value=0, max_value=100, value=50, step=5)
@@ -60,7 +60,7 @@ elif page == "Ep 1: Scarcity & PPF":
     ax.set_ylim(0, 110)
     ax.set_xlabel("Medical PPE (Quantity)")
     ax.set_ylabel("Consumer Goods (Quantity)")
-    ax.set_title("Production Possibility Frontier")
+    ax.set_title("Production Possibility Curve")
     ax.legend()
     ax.grid(True, linestyle="--", alpha=0.6)
     
