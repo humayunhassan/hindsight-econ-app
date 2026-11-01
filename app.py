@@ -39,7 +39,7 @@ if page == "The Roadmap":
 # -----------------------------------------
 elif page == "Ep 1: Scarcity & PPC":
     st.title("Episode 1: The 2020 Ventilator Shortage")
-    st.markdown("**Topic:** Scarcity, Opportunity Cost, and the Production Possibility Frontier (PPF).")
+    st.markdown("**Topic:** Scarcity, Opportunity Cost, and the Production Possibility Frontier (PPC).")
     
     st.subheader("PPC Simulator: Medical PPE vs. Consumer Goods")
     st.markdown("Adjust the slider to allocate resources. Notice how producing more PPE reduces consumer goods.")
@@ -53,7 +53,7 @@ elif page == "Ep 1: Scarcity & PPC":
     current_y = np.sqrt(100**2 - current_x**2)
     
     fig, ax = plt.subplots()
-    ax.plot(x, y, label="PPF Curve", color="blue")
+    ax.plot(x, y, label="PPC", color="blue")
     ax.plot(current_x, current_y, 'ro', markersize=10, label="Current Production")
     
     ax.set_xlim(0, 110)
