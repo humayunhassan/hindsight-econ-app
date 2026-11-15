@@ -8,7 +8,7 @@ st.set_page_config(page_title="Hindsight Economics Hub", layout="wide")
 
 # Sidebar Navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Select an Episode", ["The Roadmap", "Ep 1: Scarcity & PPC"])
+page = st.sidebar.radio("Select an Episode", ["The Roadmap", "Ep 1: Scarcity & PPC", "Ep 2: Supply & Demand"])
 
 # -----------------------------------------
 # PAGE 1: The Roadmap
