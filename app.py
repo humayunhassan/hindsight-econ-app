@@ -67,3 +67,54 @@ elif page == "Ep 1: Scarcity & PPC":
     
     st.pyplot(fig)
     st.info(f"**Opportunity Cost Alert:** By allocating {current_x}% to PPE, you can only produce {current_y:.1f} units of Consumer Goods.")
+
+    # -----------------------------------------
+# PAGE 3: Episode 2 (Supply & Demand)
+# -----------------------------------------
+elif page == "Ep 2: Supply & Demand":
+    st.title("Episode 2: The Suez Canal Blockage")
+    st.markdown("**Topic:** Exogenous Supply Shocks and Market Equilibrium.")
+    
+    st.subheader("Supply Shift Simulator")
+    st.markdown("Simulate the Ever Given getting stuck by shifting the supply curve to the left.")
+    
+    # Slider to simulate shock
+    supply_shock = st.slider("Severity of Supply Chain Blockage", min_value=0, max_value=40, value=0, step=10)
+    
+    # Base Data
+    q = np.linspace(0, 100, 100)
+    demand = 100 - q
+    supply_base = q
+    supply_shocked = q + supply_shock # Shifts supply curve up/left
+    
+    # Find Equilibriums
+    eq_q_base = 50
+    eq_p_base = 50
+    eq_q_shock = (100 - supply_shock) / 2
+    eq_p_shock = 100 - eq_q_shock
+    
+    # Plotting
+    fig, ax = plt.subplots()
+    ax.plot(q, demand, label="Demand", color="blue")
+    ax.plot(q, supply_base, label="Original Supply (S1)", color="green")
+    
+    if supply_shock > 0:
+        ax.plot(q, supply_shocked, label="Shocked Supply (S2)", color="red", linestyle="--")
+        ax.plot(eq_q_shock, eq_p_shock, 'ro', markersize=8)
+        ax.annotate(f'New Eq: P={eq_p_shock:.0f}, Q={eq_q_shock:.0f}', (eq_q_shock+2, eq_p_shock+2))
+    
+    ax.plot(eq_q_base, eq_p_base, 'go', markersize=8)
+    ax.annotate(f'Original Eq: P={eq_p_base}, Q={eq_q_base}', (eq_q_base+2, eq_p_base+2))
+    
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+    ax.set_xlabel("Quantity of Shipping Containers")
+    ax.set_ylabel("Price of Shipping")
+    ax.set_title("Global Shipping Freight Market")
+    ax.legend()
+    ax.grid(True, linestyle="--", alpha=0.6)
+    
+    st.pyplot(fig)
+    
+    if supply_shock > 0:
+        st.warning("Notice how the exogenous shock shifts the supply curve left, increasing the market-clearing price and reducing quantity.")
